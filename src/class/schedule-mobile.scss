@@ -1,0 +1,124 @@
+.schedule-mobile{
+    background: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .scheduleList{
+        position: relative;
+        overflow: scroll;
+        height: 100%;
+        //prevent iOS safari scrollbar rendered behind item.date below
+        z-index: 1;
+        .item{
+            .date{
+                color: #000;
+                background: #f2f2f2;
+                padding: 0 0.4rem;
+                line-height: 0.8rem;
+                font-weight: normal;
+                position: sticky;
+                top: -1px;
+                z-index: 1;
+                font-size: .32rem;
+            }
+            ul {
+                margin: 0;
+            }
+        }
+        .fixedDate{
+            color: #000;
+            background: #f2f2f2;
+            padding: 0 0.4rem;
+            height: calc(0.8rem + 1px);
+            line-height: 0.8rem;
+            font-weight: normal;
+            margin: 0;
+            position: fixed;
+            width: 100%;
+            z-index: 3;
+            margin-top: -1px;
+            // display: none;
+            &.absolute{
+                position: absolute;
+                top:0;
+            }
+        }
+        .no-class{
+            display: flex;
+                min-height: 150px;
+                justify-content: center;
+                background-color: white;
+                text-align: center;
+        }
+    }
+    .fixed {
+        padding-top: 1.81rem;
+        .date_list{
+            position: fixed;
+            width: 100%;
+            top: 1.2rem;
+            z-index:3;
+        }
+    }
+}
+
+.notice{
+    padding: 0.2rem 0.2rem 0;
+    .title{
+        height: 0.88rem;
+        line-height: 0.88rem;
+        padding: 0 0.08rem 0 0.5333rem;
+        background: #c00000;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.4rem;
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+        overflow: hidden;
+        span{
+            height: 0.88rem;
+            width: 0.88rem;
+            float: right;
+            text-align: center;
+            .iconfont{font-size: 0.2667rem;}
+        }
+    }
+    .notice_wra{
+        padding: 0.32rem 0.32rem 0.4rem 0.5333rem;
+        border-bottom-left-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+        background: #ffebeb;
+        position: relative;
+        font-size: 0.3733rem;
+        color: #333;
+        .line{
+            width: 0.1333rem;
+            height: 1.7333rem;
+            background: #c00000;
+            position: absolute;
+            left: 0.2rem;
+            top: 0.32rem;
+        }
+        .headLine{
+            color: #000;
+            font-weight: bold;
+            font-size: 0.4rem;
+            margin-bottom: 0.1333rem;
+        }
+        .words{
+            font-size: 0.32rem;
+            word-break: break-word;
+        }
+        .opera{
+            text-align: right;margin-top: 0.2rem;
+            button{
+                width: 2rem;
+                height: 0.88rem;
+                background: #c00;
+                color: #fff;
+                border-radius: 0.2rem;
+                font-size: 0.3733rem;
+            }
+        }
+    }
+}
