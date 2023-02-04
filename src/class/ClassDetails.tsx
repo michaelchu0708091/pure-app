@@ -48,7 +48,7 @@ class ClassDetails extends Component {
         // let data = location_list ? location_list[filter.sector] : [];
         let data = location_list
         for (var i = 0; i < data.length; i++) {
-            if (data[i].id == id) {
+            if (data[i].id === id) {
                 if (is_fuze) {
                     return `FUZE @ ${data[i].names.en}`;
                 } else {

@@ -204,7 +204,7 @@ class ScheduleButton extends Component {
             return;
         };
 
-        if (button_status == BUTTON_STATUS.VIEW) {
+        if (button_status === BUTTON_STATUS.VIEW) {
             window.open(view_url, '_blank')
             return;
         }
