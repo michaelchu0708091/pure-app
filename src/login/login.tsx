@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,19 +15,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { login, getClass, getLocation } from '../util/apiCaller.ts';
 import { UserContext } from '../App';
 import { useNavigate } from 'react-router-dom';
-
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const theme = createTheme();
 const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

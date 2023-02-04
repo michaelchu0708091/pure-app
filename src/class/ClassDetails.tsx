@@ -8,11 +8,8 @@ import { fromJS } from 'immutable';
 // import './classDetails.scss';
 // import { CLASS_CATEGORY } from '../../../config/constant';
 import Box from '@mui/material/Box';
-import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
@@ -70,7 +67,7 @@ class ClassDetails extends Component {
 
 
     render() {
-        let { language_id, item, jwt, button_item, location_id, teacher_avatar, timeShown, sector, category = undefined, date } = this.props;
+        let { item, jwt, button_item, location_id, teacher_avatar, sector, date } = this.props;
         return (
             <>
                 <div>

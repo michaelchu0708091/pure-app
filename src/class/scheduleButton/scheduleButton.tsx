@@ -141,7 +141,7 @@ class ScheduleButton extends Component {
 
     updateBtnText() {
         let text = '';
-        const { item, language_id, process_ids } = this.props;
+        const { item, language_id } = this.props;
         const button_status = item.get('button_status');
         if (this.state.loading) {
             text = '';
@@ -231,7 +231,6 @@ class ScheduleButton extends Component {
                 this.updateConfirmState(false);
             } else {
                 this.updateConfirmState(true);
-                let oBtn = this.ref.current.buttonNode;
                 // oBtn.classList.add("confirm");
                 // for (let i = 0; i < list.length; i++) {
                 //     list[i].classList.remove('confirm');
@@ -256,7 +255,7 @@ class ScheduleButton extends Component {
     }
 
     render() {
-        const { item, language_id, is_fuze } = this.props;
+        const { item, is_fuze } = this.props;
         const { confirm } = this.state;
         let category = item.get('category') ? item.get('category') : CLASS_CATEGORY.GROUP;
         const disabled = disabledStatus.indexOf(item.get('button_status')) > -1 || category !== CLASS_CATEGORY.GROUP ? true : false;

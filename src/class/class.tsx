@@ -1,18 +1,10 @@
 
 import ClassDetails from './ClassDetails.tsx';
-import intl from './intl'
 import * as React from 'react';
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './schedule-mobile.scss';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import ListSubheader from '@mui/material/ListSubheader';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import TextField from '@mui/material/TextField';
@@ -45,12 +37,7 @@ const Class = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const lang = 1
     const classesMobile = list
-    const getDateInfo = (dateInfo, lang) => {
-        let date = lang === 1 ? `${dateInfo.d} ${getMonth(dateInfo.m)} ${dateInfo.y}` : `${dateInfo.date}`;
-        return date;
-    }
     const getScheduleItemMobile = (list, date) => {
         return (
             <List>

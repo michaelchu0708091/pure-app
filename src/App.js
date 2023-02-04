@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import SignIn from './login/login.tsx';
-import Class from './class/class.tsx';
 import React from 'react';
 import './App.css';
 export const UserContext = React.createContext();

@@ -11,15 +11,7 @@ class GetTeacherAvatar extends Component {
         this.state = {};
     }
     render() {
-        let { id, teacherId, teacherAvatar, mood, vaccinatedClass, special, showSpecial } = this.props;
-        let strokeColor = "#CCCCCC";
-        let strokeWidth = "10px";
-        let transform = "scale(0.91) translate(22 14)";
-        if (special && showSpecial) {
-            strokeColor = special.color;
-            strokeWidth = "30px";
-            transform = "scale(0.85) translate(30 18)";
-        }
+        let {teacherAvatar} = this.props;
         return (
             <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src={teacherAvatar} />
