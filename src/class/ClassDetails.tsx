@@ -44,7 +44,6 @@ class ClassDetails extends Component {
     handleClose = () => this.setState({ open: false })
     locations(id, is_fuze, sector) {
         const location_list = this.props.locations;
-        let lang = 'en'
         // let data = location_list ? location_list[filter.sector] : [];
         let data = location_list
         for (var i = 0; i < data.length; i++) {

@@ -24,7 +24,6 @@ export const login = async ({email, password}: {email: string, password: string}
         "credentials": "omit"
       });
       const token = await login.json()
-      const headers = await login.headers
       const decodedToken = {jwt: token.data.user.jwt, xData: token.data.user.token}
       return decodedToken
 
