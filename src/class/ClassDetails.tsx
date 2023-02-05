@@ -89,26 +89,28 @@ class ClassDetails extends Component {
                                 <Typography variant="body1" gutterBottom>
                                     Really wanna book?
                                 </Typography>
-                                {button_item.button_status === 0 && <LocalizationProvider dateAdapter={AdapterMoment}>
-                                    <MobileDateTimePicker
-                                        label="When to book?"
-                                        value={this.state.bookingTime}
-                                        onChange={(newValue) => {
-                                            this.setState({ bookingTime: moment(newValue)});
-                                        }}
-                                        renderInput={(params) => <TextField {...params} />}
-                                    />
-                                </LocalizationProvider>}
+                                <div>
+                                    {button_item.button_status === 0 && <LocalizationProvider dateAdapter={AdapterMoment}>
+                                        <MobileDateTimePicker
+                                            label="When to book?"
+                                            value={this.state.bookingTime}
+                                            onChange={(newValue) => {
+                                                this.setState({ bookingTime: moment(newValue) });
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                    </LocalizationProvider>}
+                                </div>
                                 <Button style={{ padding: 0 }} onClick={async () => {
-                                    if(button_item.button_status !== 0){
+                                    if (button_item.button_status !== 0) {
                                         const result = await book(jwt, item.id)
                                         console.log(result)
                                     }
-                                    else{
+                                    else {
                                         let now = new Date()
-                                        let interval =  this.state.bookingTime.valueOf() - now - 50
+                                        let interval = this.state.bookingTime.valueOf() - now - 50
                                         console.log(interval)
-                                        await setTimeout(()=>{
+                                        await setTimeout(() => {
                                             // TB FINISH
                                             console.log('hi')
                                         }, interval)

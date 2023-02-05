@@ -2,7 +2,7 @@
 
 
 export const login = async ({email, password}: {email: string, password: string}) => { 
-    const login = await fetch("https://pure360-api.pure-international.com/api/v3/login", {
+    const login = await fetch("https://pureappproxypurposes.azurewebsites.net/api/pureProxy", {
         "headers": {
           "accept": "application/json, text/plain, */*",
           "accept-language": "en-GB,en;q=0.9,en-US;q=0.8",
@@ -18,7 +18,7 @@ export const login = async ({email, password}: {email: string, password: string}
         },
         "referrer": "https://pure360.pure-fitness.com/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": `{"username":"${email}","password":"${password}","region_id":1,"language_id":"1","jwt":true}`,
+        "body": `{"username":"${email}","email": "${email}","password":"${password}","region_id":1,"language_id":"1","jwt":true}`,
         "method": "POST",
         "mode": "cors",
         "credentials": "omit"
@@ -32,7 +32,7 @@ export const login = async ({email, password}: {email: string, password: string}
 export const getClass = async (token, locationIDs) => {
     let yourDate = new Date()
     yourDate = yourDate.toISOString().split('T')[0]
-    const _classList = await fetch(`https://pure360-api.pure-international.com/api/v3/view_schedule?location_ids=${locationIDs}&region_id=1&start_date=${yourDate}&sector=F&days=5&language_id=1&api_version=3`, {
+    const _classList = await fetch(`https://pureappproxypurposes.azurewebsites.net/api/pureGetClass?location_ids=${locationIDs}&region_id=1&start_date=${yourDate}&sector=F&days=5&language_id=1&api_version=3&jwt=${token.token.jwt}`, {
   "headers": {
     "accept": "application/json, text/plain, */*",
     "accept-language": "en-GB,en;q=0.9,en-US;q=0.8",
@@ -59,7 +59,7 @@ return classList
 }
 
 export const getLocation = async (token) => {
-  const _locationList = await fetch(`https://pure360-api.pure-international.com/api/v3/view_location?language_id=1&region_id=1`, {
+  const _locationList = await fetch(`https://pureappproxypurposes.azurewebsites.net/api/pureGetLocations?language_id=1&region_id=1&jwt=${token.token.jwt}`, {
 "headers": {
   "accept": "application/json, text/plain, */*",
   "accept-language": "en-GB,en;q=0.9,en-US;q=0.8",
@@ -89,7 +89,7 @@ return locationList
 
 export const book = async (token,id) => { 
   console.log(token)
-  const book = await fetch("https://pure360-api.pure-international.com/api/v3/booking", {
+  const book = await fetch("https://pureappproxypurposes.azurewebsites.net/api/pureBook", {
       "headers": {
         "accept": "application/json, text/plain, */*",
         "accept-language": "en-GB,en;q=0.9,en-US;q=0.8",
@@ -107,7 +107,7 @@ export const book = async (token,id) => {
       },
       "referrer": "https://pure360.pure-fitness.com/",
       "referrerPolicy": "strict-origin-when-cross-origin",
-      "body": `{"language_id": "1","class_id": ${id},"book_type": 1,"booked_from": "WEB","region_id": "1"}`,
+      "body": `{"language_id": "1","class_id": ${id},"book_type": 1,"booked_from": "WEB","region_id": "1", "jwt":${token.token.jwt}}`,
       "method": "POST",
       "mode": "cors",
       "credentials": "omit"
