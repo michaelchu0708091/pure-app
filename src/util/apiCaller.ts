@@ -107,7 +107,7 @@ export const book = async (token,id) => {
       },
       "referrer": "https://pure360.pure-fitness.com/",
       "referrerPolicy": "strict-origin-when-cross-origin",
-      "body": `{"language_id": "1","class_id": ${id},"book_type": 1,"booked_from": "WEB","region_id": "1", "jwt":${token.token.jwt}}`,
+      "body": `{"language_id": "1","class_id": ${id},"book_type": 1,"booked_from": "WEB","region_id": "1", "jwt":"${token.token.jwt}"}`,
       "method": "POST",
       "mode": "cors",
       "credentials": "omit"
